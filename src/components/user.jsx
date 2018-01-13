@@ -2,17 +2,24 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as Users from '../JSON/users.json';
 import {add_user} from '../actions/actions';
+import OptionForm from '../components/OptionForm';
 import {Table} from 'react-bootstrap';
 
 class User extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name:'',
+            username:'',
+            email:''
+        }
+    }
     componentDidMount() {
         Users.map((item, index) => {
             this.props.add_user(Object.assign({}, item))
         })
 
     }
-
-
 
     render() {
         console.log(Users);
@@ -32,7 +39,7 @@ class User extends Component {
                     {this.props.state.map((item, index) => {
                         return (
                             <tr key={index}>
-                            <td>{index}</td>
+                            <td>{index + 1}</td>
                             <td>{item.name}</td>
                             <td>{item.username}</td>
                             <td>{item.email}</td>
@@ -41,6 +48,7 @@ class User extends Component {
                     })}
                 </tbody>
                 </Table>
+                <OptionForm />
             </div>
         )
     }

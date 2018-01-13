@@ -1,4 +1,4 @@
-import { ADD_USER } from "../constants/constants";
+import { ADD_USER, DELETE_USER } from "../constants/constants";
 
 
 export const UserMas = (state = [], action) => {
@@ -8,6 +8,14 @@ export const UserMas = (state = [], action) => {
                 [...state, UserObj({}, action)]
             )
             break;
+        case DELETE_USER:
+            return (
+                state.filter((item) => {
+                    if (item.email !== action.email) {
+                        return item;
+                    }
+                })
+            )
         default:
             return state;
     }
