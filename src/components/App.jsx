@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as Users from '../JSON/users.json';
 import {Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 
-//import '../App.css';
+
 
 class App extends Component {
   constructor(props) {

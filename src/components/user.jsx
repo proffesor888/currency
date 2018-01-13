@@ -3,7 +3,9 @@ import {connect} from 'react-redux';
 import * as Users from '../JSON/users.json';
 import {add_user} from '../actions/actions';
 import OptionForm from '../components/OptionForm';
+import CurrencyCalc from '../components/СurrencyCalc';
 import {Table} from 'react-bootstrap';
+
 
 class User extends Component {
     constructor(props) {
@@ -22,8 +24,6 @@ class User extends Component {
     }
 
     render() {
-        console.log(Users);
-        console.log(this.props);
         return (
             <div>
                 <Table striped bordered condensed hover>
@@ -49,6 +49,7 @@ class User extends Component {
                 </tbody>
                 </Table>
                 <OptionForm />
+                <CurrencyCalc />
             </div>
         )
     }
