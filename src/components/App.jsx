@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as Users from '../JSON/users.json';
 import {Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 
 //import '../App.css';
@@ -10,6 +11,10 @@ class App extends Component {
       login:'',
       password:''
     }
+  }
+
+  signIn() {
+    
   }
 
   render() {
@@ -27,7 +32,7 @@ class App extends Component {
         placeholder='Enter password'
         onChange={event => this.setState({password: event.target.value})}
         ></FormControl>
-        <Button>Sign In</Button>
+        <Button onClick={() => this.signIn()}>Sign In</Button>
       </FormGroup>
       </div>
     );
