@@ -11,7 +11,8 @@ class CurrencyCalc extends Component {
             countValue: undefined
         }
     }
-
+    //request to the API to get currency JSON
+    //counting requested value
     count() {
         let {curUser, curCount} = this.state;
         const urlBase = `https://api.fixer.io/latest?base=${curUser}`;
@@ -21,6 +22,7 @@ class CurrencyCalc extends Component {
         .then((data) => data.json())
         .then((data) => {
             let value = data.rates[this.state.curCount] * this.state.enteredValue;
+            value = value.toFixed(2);
             this.setState({countValue: value});
         })
 
@@ -56,7 +58,7 @@ class CurrencyCalc extends Component {
                             </FormGroup>
                             <div className='block'>
                                 <Button className='block-count' onClick={() => this.count()}>Count</Button>
-                                <p className='block-p'>{this.state.countValue}</p>
+                                <p className='block-p'>{this.state.countValue}{this.state.curCount}</p>
                             </div>
                         </FormGroup>
                 </Form>

@@ -12,9 +12,11 @@ class OptionForm extends Component {
             email:''
         }
     }
+    //adding new user option
     addUser() {
         this.props.add_user(Object.assign({}, this.state));
     }
+    //removing user by the email
     removeUser() {
         this.props.delete_user(this.state.email);
     }

@@ -16,11 +16,11 @@ class User extends Component {
             email:''
         }
     }
+    //adding users to the Redux store
     componentDidMount() {
         Users.map((item, index) => {
             this.props.add_user(Object.assign({}, item))
         })
-
     }
 
     render() {
