@@ -25,16 +25,19 @@ class OptionForm extends Component {
                     <FormGroup>
                         <ControlLabel>Add new user</ControlLabel>
                         <FormControl
+                            className='options'
                             type='text'
                             placeholder='Enter name'
                             onChange={event => this.setState({name: event.target.value})}
                         ></FormControl>
                         <FormControl
+                            className='options'
                             type='text'
                             placeholder='Enter preferable user name'
                             onChange={event => this.setState({username: event.target.value})}
                         ></FormControl>
                         <FormControl
+                            className='options'
                             type='text'
                             placeholder='Enter your email'
                             onChange={event => this.setState({email: event.target.value})}
@@ -44,6 +47,7 @@ class OptionForm extends Component {
                     <FormGroup>
                         <ControlLabel>Delete user by email</ControlLabel>
                         <FormControl
+                            className='options'
                             type='text'
                             placeholder='email'
                             onChange={event => this.setState({email: event.target.value})}

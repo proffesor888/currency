@@ -11,4 +11,27 @@ body {
   justify-content: center ;
 }
 
+.options {
+  margin-bottom: 10px;
+}
+
+.curStyle {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.bar {
+  margin: 0;
+}
+
+.btn {
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+}
+
 

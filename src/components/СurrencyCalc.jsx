@@ -20,7 +20,6 @@ class CurrencyCalc extends Component {
         receivedData
         .then((data) => data.json())
         .then((data) => {
-            //console.log(data)
             let value = data.rates[this.state.curCount] * this.state.enteredValue;
             this.setState({countValue: value});
         })
@@ -34,28 +33,32 @@ class CurrencyCalc extends Component {
                     <FormGroup>
                         <ControlLabel>Enter your sum</ControlLabel>
                             <FormControl
-                            //type='text'
+                            className='curStyle-bar'
                             placeholder='Enter value'
                             onChange={event => this.setState({enteredValue: event.target.value})}
                             >
                             </FormControl>
                             <FormGroup>
-                                <ControlLabel>Choose your currency</ControlLabel>
-                                <select onChange={event => this.setState({curUser: event.target.value})}>
+                                <ControlLabel className='curStyle'>Choose your currency</ControlLabel>
+                                <select className='curStyle' onChange={event => this.setState({curUser: event.target.value})}>
+                                    <option></option>
                                     <option>USD</option>
                                     <option>EUR</option>
                                     <option>RUB</option>
                                 </select>
-                                <ControlLabel>Desired currency</ControlLabel>
-                                <select onChange={event => this.setState({curCount: event.target.value})}>
+                                <ControlLabel className='curStyle'>Desired currency</ControlLabel>
+                                <select className='curStyle' onChange={event => this.setState({curCount: event.target.value})}>
+                                    <option></option>
                                     <option>USD</option>
                                     <option>EUR</option>
                                     <option>RUB</option>
                                 </select>
-                                <Button onClick={() => this.count()}>Count</Button>
-                                <p className='answer'>{this.state.countValue}</p>
                             </FormGroup>
-                    </FormGroup>
+                            <div className='block'>
+                                <Button className='block-count' onClick={() => this.count()}>Count</Button>
+                                <p className='block-p'>{this.state.countValue}</p>
+                            </div>
+                        </FormGroup>
                 </Form>
             </div>
         )
